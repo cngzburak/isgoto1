@@ -1,0 +1,478 @@
+﻿
+<div class="modal fade" tabindex="-1" role="dialog" id="modal2">
+    <div class="modal-dialog modal-lg" style="width:80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Personel Düzenleme</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+
+                    <div class="col-md-12">
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend><br>Kişisel Bilgileri</br></legend>
+                                <div class="col-md-6">
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="tc">TC K.Nu</label>
+                                                <div class="controls">
+                                                    <input type="text" id="tc" placeholder="TC K.Nu">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="d.yeri">Doğum Yeri</label>
+                                                <div class="controls">
+                                                    <input type="text" id="d.yeri" placeholder="Doğum Yeri">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="adi">Adı</label>
+                                                <div class="controls">
+                                                    <input type="text" id="adi" placeholder="Adi">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="soyadi">Soyadı</label>
+                                                <div class="controls">
+                                                    <input type="text" id="soyadi" placeholder="Soyadı">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="gender">Cinsiyet</label>
+                                                <div class="controls">
+                                                    <select id="gender" class="span12">
+                                                        <option value="1">Bay</option>
+                                                        <option value="2">Bayan</option>
+                                                    </select>
+                                                    <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="dogumtarihi">Doğum Tarihi</label>
+                                                <div class="controls">
+                                                    <input type="text" id="dogumtarihi" placeholder="dd.mm.yyyy">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="gender">Medeni Hal</label>
+                                                <div class="controls">
+                                                    <select id="gender" class="span12">
+                                                        <option value="1">Evli</option>
+                                                        <option value="2">Bekar</option>
+                                                    </select>
+                                                    <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="gender">Kan Grubu</label>
+                                                <div class="controls">
+                                                    <select id="gender" class="span12">
+                                                        <option value="1">0 rh+</option>
+                                                        <option value="2">0 rh-</option>
+                                                        <option value="1">A rh+</option>
+                                                        <option value="2">A rh-</option>
+                                                        <option value="1">B rh+</option>
+                                                        <option value="2">B rh-</option>
+                                                        <option value="1">AB rh+</option>
+                                                        <option value="2">AB rh-</option>
+                                                    </select>
+                                                    <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="ceptel">Cep Tel</label>
+                                                <div class="controls">
+                                                    <input type="text" id="cep" placeholder="Cep Tel">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="email">Email</label>
+                                                <div class="controls">
+                                                    <input type="text" id="email" placeholder="Email">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend><br>Kimlik Bilgileri</br></legend>
+                                <div class="col-md-6">
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="seri">Seri</label>
+                                                <div class="controls">
+                                                    <input type="text" id="tc" placeholder="Seri">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="no">No</label>
+                                                <div class="controls">
+                                                    <input type="text" id="no" placeholder="no">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="baba">Baba Adı</label>
+                                                <div class="controls">
+                                                    <input type="text" id="babadı" placeholder="Baba Adı">
+
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="ana">Ana Adı</label>
+                                                <div class="controls">
+                                                    <input type="text" id="anaadı" placeholder="Ana Adı">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="il">Kayıt Olduğu İl</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Kayıt Olduğu İl">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="ilçe">Kayıt Olduğu İlçe</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Kayıt Olduğu İlçe">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="m.k">Mahalle-Köy</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Mahalle-Köy">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="span6 bgcolor">
+                                        <div class="control-group">
+                                            <label class="control-label" for="ciltno">Cilt No</label>
+                                            <div class="controls">
+                                                <input type="text" id="Cilt No">
+                                            </div>
+                                        </div>
+                                    </div><!--/span-->
+                                    <!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="a.sıra">Aile Sıra No</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Aile Sıra No">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="sıra">Sıra No</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Sıra No">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="v.yer">Verildiği Yer</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Verildiği Yer">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="v.nedeni">Veriliş Nedeni</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Veriliş Nedeni">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                    <div class="row-fluid">
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="k.no">Kayıt No</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Verildiği Yer">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                        <div class="span6 bgcolor">
+                                            <div class="control-group">
+                                                <label class="control-label" for="v.nedeni">Veriliş Nedeni</label>
+                                                <div class="controls">
+                                                    <input type="text" id="Veriliş Nedeni">
+                                                </div>
+                                            </div>
+                                        </div><!--/span-->
+                                    </div><!--/row-->
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend><br>Şirket Bilgileri</br></legend>
+                                <div class="row-fluid">
+                                    <div class="span6 bgcolor">
+                                        <div class="control-group">
+                                            <label class="control-label" for="gender">Görevi</label>
+                                            <div class="controls">
+                                                <select id="gender" class="span12">
+                                                    <option value="1">Müdür</option>
+                                                    <option value="2">Tekniker</option>
+                                                    <option value="1">Mühendis</option>
+                                                    <option value="2">Taşeron</option>
+                                                    <option value="1">Ajan</option>
+                                                    <option value="2">Makinist</option>
+                                                </select>
+                                                <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                            </div>
+                                        </div>
+                                    </div><!--/span-->
+                                </div><!--/row-->
+                                <div class="row-fluid">
+                                    <div class="span6 bgcolor">
+                                        <div class="control-group">
+                                            <label class="control-label" for="p.no">Personel No</label>
+                                            <div class="controls">
+                                                <input type="text" id="Personel No" placeholder="Personel No">
+
+                                            </div>
+                                        </div>
+                                    </div><!--/span-->
+                                    <div class="span6 bgcolor">
+                                        <div class="control-group">
+                                            <label class="control-label" for="K.tarihi">Kayıt Tarihi</label>
+                                            <div class="controls">
+                                                <input type="text" id="K.tarihi" placeholder="Kayıt Tarihi">
+
+                                            </div>
+                                        </div>
+                                    </div><!--/span-->
+                                </div><!--/row-->
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <div class="tabbable">
+                                    <!-- Only required for left/right tabs -->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#tab1" data-toggle="tab">Öğrenim</a></li>
+                                        <li><a href="#tab2" data-toggle="tab">Sabıka Kaydı</a></li>
+                                        <li><a href="#tab3" data-toggle="tab">Sağlık Raporu</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab1">
+                                            <div class="row-fluid">
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="b.verenkurum">Belge Veren Kurum</label>
+                                                        <div class="controls">
+                                                            <select id="b.verenkurum" class="span12">
+                                                                <option value="1">Bilkent Üniversitesi</option>
+                                                                <option value="2">Hacettepe Üniversitesi</option>
+                                                                <option value="1">Orta Doğu Teknik Üniversitesi</option>
+                                                            </select>
+                                                            <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                        </div>
+                                                    </div>
+                                                </div><!--/span-->
+                                            </div><!--/row-->
+                                            <div class="row-fluid">
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="b.türü">Belge Türü</label>
+                                                        <div class="controls">
+                                                            <select id="b.türü" class="span12">
+                                                                <option value="1">Lise</option>
+                                                                <option value="2">Üniversite</option>
+                                                                <option value="1">Yüksek Lisans</option>
+                                                            </select>
+                                                            <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                        </div>
+                                                    </div>
+                                                </div><!--/span-->
+                                            </div><!--/row-->
+                                            <div class="span6 bgcolor">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="B.tarihii">Belge Tarihii</label>
+                                                    <div class="controls">
+                                                        <input type="text" id="B.tarihii" placeholder="Belge Tarihii">
+                                                    </div>
+                                                </div>
+                                            </div><!--/span-->
+                                            <div class="span6 bgcolor">
+                                                <div class="control-group">
+                                                    <label class="control-label" for="B.sayısıı">Belge Sayısıı</label>
+                                                    <div class="controls">
+                                                        <input type="text" id="B.sayısıı" placeholder="Belge Sayısıı">
+                                                    </div>
+                                                </div>
+                                            </div><!--/span-->
+                                        </div>
+
+                                        <div class="tab-pane" id="tab2">
+                                            <div class="tab-pane active" id="tab2">
+                                                <div class="row-fluid">
+                                                    <div class="span6 bgcolor">
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="s.b.verenkurum">Savcılık Belgesi Veren Kurum</label>
+                                                            <div class="controls">
+                                                                <select id="s.b.verenkurum" class="span12">
+                                                                    <option value="1">Bilkent Üniversitesi</option>
+                                                                    <option value="2">Hacettepe Üniversitesi</option>
+                                                                    <option value="1">Orta Doğu Teknik Üniversitesi</option>
+                                                                </select>
+                                                                <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                            </div>
+                                                        </div>
+                                                    </div><!--/span-->
+                                                </div><!--/row-->
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="B.tarihi">Belge Tarihi</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="B.tarihi" placeholder="Belge Tarihi">
+                                                        </div>
+                                                    </div>
+                                                </div><!--/span-->
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="B.sayısı">Belge Sayısı</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="B.sayısı" placeholder="Belge Sayısı">
+                                                        </div>
+                                                    </div>
+                                                </div><!--/span-->
+                                            </div>
+
+                                        </div>
+                                        <div class="tab-pane" id="tab3">
+                                            <div class="tab-pane active" id="tab3">
+                                                <div class="row-fluid">
+                                                    <div class="span6 bgcolor">
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="b.verenkurum">Belge Veren Kurum</label>
+                                                            <div class="controls">
+                                                                <select id="b.verenkurum" class="span12">
+                                                                    <option value="1">Keçiören Sağlık Ocağı</option>
+                                                                    <option value="2">Cebeci Sağlık Ocağı</option>
+                                                                    <option value="1">Batıkent Sağlık Ocağı</option>
+                                                                </select>
+                                                                <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                            </div>
+                                                        </div>
+                                                    </div><!--/span-->
+                                                </div><!--/row-->
+                                                <div class="row-fluid">
+                                                    <div class="span6 bgcolor">
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="ö.durumu">Özür Durumu</label>
+                                                            <div class="controls">
+                                                                <select id="ö.durumu" class="span12">
+                                                                    <option value="1">Görme Özürlü</option>
+                                                                    <option value="2">Yürüme Özürlü</option>
+                                                                    <option value="1">Özürü Yok</option>
+                                                                </select>
+                                                                <!-- <span class="help-block">Cinsiyet seçiniz.</span>-->
+                                                            </div>
+                                                        </div>
+                                                    </div><!--/span-->
+                                                </div><!--/row-->
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="B.tarihi">Belge Tarihi</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="B.tarihi" placeholder="Belge Tarihi">
+                                                        </div>
+                                                    </div>
+                                                </div><!--/span-->
+                                                <div class="span6 bgcolor">
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="B.sayısı">Belge Sayısı</label>
+                                                        <div class="controls">
+                                                            <input type="text" id="B.sayısı" placeholder="Belge Sayısı">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!--/span-->
+                    <div class="span6 bgcolor"><button type="submit" class="btn btn-primary">Kaydet</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

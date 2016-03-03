@@ -1,0 +1,196 @@
+﻿@using IGS_Otomasyon.Models
+@model IGS_Otomasyon.Models.Muayene
+
+<input type="hidden" name="muayene.MuayeneId" value="@(Model != null ? Model.MuayeneId : 0)" />
+
+<input type="hidden" name="muayene.DoktorId" value="@(Model != null ? (Model.DoktorId ?? 0) : 0)" />
+
+<div style="padding: 10px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Muayene Ekle/Düzenle
+
+            <button type="submit" class="btn btn-primary" style="margin-left: 78%;">
+                <i class="glyphicon glyphicon-floppy-save"></i>
+                &nbsp; Kaydet
+            </button>
+        </div>
+        <div class="panel-body">
+
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Muayene Bilgileri</legend>
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <h5>Muayene Türü</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" name="muayene.MuayeneTur">
+                                    @foreach (var item in Enum.GetValues(typeof(MuayeneTurType)))
+                                    {
+                                        if (Model != null && (int)item == Model.MuayeneTur)
+                                        {
+                                            <option selected value="@((int) item)">
+                                                @(EnumHelper<MuayeneTurType>.Convert(item))
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@((int) item)">
+                                                @(EnumHelper<MuayeneTurType>.Convert(item))
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-4">
+                                <h5>Bildirim Zorunlu Mu</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" name="muayene.Bildirim">
+                                    @foreach (var item in Enum.GetValues(typeof(BildirimType)))
+                                    {
+                                        if (Model != null && (int)item == Model.Bildirim)
+                                        {
+                                            <option selected value="@((int) item)">
+                                                @(EnumHelper<BildirimType>.Convert(item))
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@((int) item)">
+                                                @(EnumHelper<BildirimType>.Convert(item))
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                            <div class="col-md-4">
+                                <h5>Muayane Tarihi</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="muayene.MuayeneTarih" id="datepicker" value="@(Model != null && Model.MuayeneTarih != null ? ((DateTime) (Model.MuayeneTarih)).ToShortDateString() : "")" />
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                            <div class="col-md-4">
+                                <h5>Muayanen Sonuc</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" name="muayene.MuayeneSonuc">
+                                    @foreach (var item in Enum.GetValues(typeof(MuayeneSonucType)))
+                                    {
+                                        if (Model != null && (int)item == Model.MuayeneTur)
+                                        {
+                                            <option selected value="@((int) item)">
+                                                @(EnumHelper<MuayeneSonucType>.Convert(item))
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@((int) item)">
+                                                @(EnumHelper<MuayeneSonucType>.Convert(item))
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-4">
+                                <h5>Sevk Var mı?</h5>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="checkbox" @(Model != null && Model.Sevk != null && (bool)Model.Sevk ? "checked=\"checked\"" : "") name="muayene.Sevk" value="true" />
+                                <input type="hidden" name="muayene.Sevk" value="false" />
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-4">
+                                <h5>İstirahat Var mı?</h5>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="checkbox" @(Model != null && Model.Istirahat != null && (bool)Model.Istirahat ? "checked=\"checked\"" : "") name="muayene.Istirahat" value="true" />
+                                <input type="hidden" name="muayene.Istirahat" value="false" />
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    </fieldset>
+                </div>
+
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Personel Bilgileri</legend>
+                        <div class="col-md-12">
+
+                            <div class="col-md-4">
+                                <h5>Personel</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" name="muayene.PersonelId">
+                                    @foreach (var item in Functions.GetPersonelList())
+                                    {
+                                        if (Model != null && item.PersonelId == Model.PersonelId)
+                                        {
+                                            <option selected value="@(item.PersonelId)">@item.Kimlik.Ad @item.Kimlik.Soyad</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@(item.PersonelId)">@item.Kimlik.Ad @item.Kimlik.Soyad</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+
+
+                            <div class="col-md-4">
+                                <h5>Departman/Bölüm</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" name="muayene.Departman" id="Departman" value="@(Model != null ? Model.Departman : "")" />
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-4">
+                                <h5>Meslek</h5>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control" name="muayene.Meslek">
+                                    @foreach (var item in Enum.GetValues(typeof(MeslekType)))
+                                    {
+                                        if (Model != null && (int)item == Model.MuayeneTur)
+                                        {
+                                            <option selected value="@((int) item)">
+                                                @(EnumHelper<MeslekType>.Convert(item))
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@((int) item)">
+                                                @(EnumHelper<MeslekType>.Convert(item))
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b7f9dddeb5c4479aabc1f4c6063fd0fd" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="Models.Iletisim" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Kimlik" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Kullanici" Width="1.5" PointX="8" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Muayene" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Ogrenim" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Personel" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Rol" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Sabika" Width="1.5" PointX="0.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Saglik" Width="1.5" PointX="0.75" PointY="23.625" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK_Personel_Iletisim" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Personel_Kimlik" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Kullanici_Rol1" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Muayene_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Personel_Ogrenim" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Personel_Sabika" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Personel_Saglik" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

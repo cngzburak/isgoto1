@@ -1,0 +1,383 @@
+﻿@using IGS_Otomasyon.Models
+@model Personel
+
+<input class="form-control" type="hidden" value="@(Model != null ? Model.PersonelId : 0)" name="personel.PersonelId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.SaglikId : 0)" name="personel.SaglikId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.Saglik.SaglikId : 0)" name="personel.Saglik.SaglikId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.IletisimId : 0)" name="personel.IletisimId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.Iletisim.IletisimId : 0)" name="personel.Iletisim.IletisimId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.KimlikId : 0)" name="personel.KimlikId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.Kimlik.KimlikId : 0)" name="personel.Kimlik.KimlikId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.OgrenimId : 0)" name="personel.OgrenimId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.Ogrenim.OgrenimId : 0)" name="personel.Ogrenim.OgrenimId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.SabikaId : 0)" name="personel.SabikaId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.Sabika.SabikaId : 0)" name="personel.Sabika.SabikaId" />
+<input class="form-control" type="hidden" value="@(Model != null ? Model.CreateTime : DateTime.Now)" name="personel.CreateTime" />
+
+
+<div style="padding: 10px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Personel Ekle/Düzenle
+
+            <button type="submit" class="btn btn-primary" style="margin-left: 78%;">
+                <i class="glyphicon glyphicon-floppy-save"></i>
+                &nbsp; Kaydet
+            </button>
+        </div>
+        <div class="panel-body">
+
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Kişisel Bilgileri</legend>
+                        <div class="col-md-2">
+                            <h5>TC K.Nu</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.TcNo : "")" name="personel.Kimlik.TcNo" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Doğum Yeri</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.DogumYeri : "")" name="personel.Kimlik.DogumYeri" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Adı</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.Ad : "")" name="personel.Kimlik.Ad" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Soyadı</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.Soyad : "")" name="personel.Kimlik.Soyad" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Cinsiyet</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" name="personel.Kimlik.Cinsiyet">
+                                @foreach (var item in Enum.GetValues(typeof(CinsiyetType)).Cast<CinsiyetType>())
+                                {
+                                    if (Model != null && Model.Kimlik.Cinsiyet == (int)item)
+                                    {
+                                        <option selected value="@((int)item)">@(item)</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@((int)item)">@(item)</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Doğum Tarihi</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control datepickerItem" type="text" value="@(Model != null && Model.Kimlik.DogumTarihi != null ? ((DateTime) Model.Kimlik.DogumTarihi).ToShortDateString() : null)" name="personel.Kimlik.DogumTarihi" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Medeni Hal</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" name="personel.Kimlik.MedeniHal">
+                                @foreach (var item in Enum.GetValues(typeof(MedeniHalType)).Cast<MedeniHalType>())
+                                {
+                                    if (Model != null && Model.Kimlik.MedeniHal == (int)item)
+                                    {
+                                        <option selected value="@((int)item)">@(EnumHelper<MedeniHalType>.Convert(item))</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@((int)item)">@(EnumHelper<MedeniHalType>.Convert(item))</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Kan Grubu</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" name="personel.Kimlik.KanGrubu">
+                                @foreach (var item in Enum.GetValues(typeof(KanGrubuType)).Cast<KanGrubuType>())
+                                {
+                                    if (Model != null && Model.Kimlik.KanGrubu == (int)item)
+                                    {
+                                        <option selected value="@((int)item))">@(EnumHelper<KanGrubuType>.Convert(item))</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@((int)item)">@(EnumHelper<KanGrubuType>.Convert(item))</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Cep Tel</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.CepTel : "")" name="personel.CepTel" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Email</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Iletisim.EPosta : "")" name="personel.Iletisim.EPosta" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Kimlik Bilgileri</legend>
+                        <div class="col-md-2">
+                            <h5>Seri</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.Seri : "")" name="personel.Kimlik.Seri" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.No : 0)" name="personel.Kimlik.No" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Baba Adı</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.BabaAdi : "")" name="personel.Kimlik.BabaAdi" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Ana Adı</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.AnaAdi : "")" name="personel.Kimlik.AnaAdi" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Cilt No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.CiltNo : "")" name="personel.Kimlik.CiltNo" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Aile Sıra No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.AileSiraNo : "")" name="personel.Kimlik.AileSiraNo" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Sıra No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.SiraNo : "")" name="personel.Kimlik.SiraNo" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Mahalle/Köy</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.MahalleKoy : "")" name="personel.Kimlik.MahalleKoy" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Kayıtlı Olduğu İl</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.Il : "")" name="personel.Kimlik.Il" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Kayıtlı Olduğu İlçe</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.Ilce : "")" name="personel.Kimlik.Ilce" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Verildiği Yer</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.VerildigiYer : "")" name="personel.Kimlik.VerildigiYer" />
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Veriliş Nedeni</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.VerilisNedeni : "")" name="personel.Kimlik.VerilisNedeni" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-2">
+                            <h5>Kayıt No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.Kimlik.KayitNo : 0)" name="personel.Kimlik.KayitNo" />
+                        </div>
+                        <div class="clearfix"></div>
+                    </fieldset>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Şirket Bilgileri</legend>
+                        <div class="col-md-2">
+                            <h5>Görevi</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-control" name="personel.Gorevi">
+                                @foreach (var item in Enum.GetValues(typeof(GorevType)).Cast<GorevType>())
+                                {
+                                    if (Model != null && Model.Gorevi == (int)item)
+                                    {
+                                        <option selected value="@((int)item)">@(EnumHelper<GorevType>.GetDisplayValue(item))</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@((int)item)">@(EnumHelper<GorevType>.GetDisplayValue(item))</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <h5>Personel No</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" value="@(Model != null ? Model.PersonelNo : "")" name="personel.PersonelNo" />
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Belgeler</legend>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Öğrenim</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sabıka Kaydı</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Saglik Raporu</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        <h5>Belge Veren Kurum</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Ogrenim.VerenKurum : "")" name="personel.Ogrenim.VerenKurum" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Belge Türü</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Ogrenim.BelgeTuru : "")" name="personel.Ogrenim.BelgeTuru" />
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-2">
+                                        <h5>Belge Tarihi</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control datepickerItem" type="text"
+                                               value="@(Model != null && Model.Ogrenim.BelgeTarihi != null ? ((DateTime) Model.Ogrenim.BelgeTarihi).ToShortDateString() : null)" name="personel.Ogrenim.BelgeTarihi" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Belge Sayısı</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Ogrenim.BelgeSayisi : "")" name="personel.Ogrenim.BelgeSayisi" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        <h5>Belgesi Veren Kurum</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Sabika.VerenKurum : "")" name="personel.Sabika.VerenKurum" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Belge Tarihi</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control datepickerItem" type="text"
+                                               value="@(Model != null && Model.Sabika.BelgeTarihi != null ? ((DateTime)Model.Sabika.BelgeTarihi).ToShortDateString() : null)" name="personel.Sabika.BelgeTarihi" />
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-2">
+                                        <h5>Belge Sayısı</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Sabika.BelgeSayisi : "")" name="personel.Sabika.BelgeSayisi" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        <h5>Belge Veren Kurum</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Saglik.VerenKurum : "")" name="personel.Saglik.VerenKurum" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Özür Durumu</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Saglik.OzurDurumu : "")" name="personel.Saglik.OzurDurumu" />
+                                    </div>
+                                    <div class="clearfix"></div>
+
+                                    <div class="col-md-2">
+                                        <h5>Belge Tarihi</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control datepickerItem" type="text"
+                                               value="@(Model != null && Model.Saglik.BelgeTarihi  != null ? ((DateTime)Model.Saglik.BelgeTarihi).ToShortDateString() : null)" name="personel.Saglik.BelgeTarihi" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>Belge Sayısı</h5>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input class="form-control" type="text" value="@(Model != null ? Model.Saglik.BelgeSayisi : "")" name="personel.Saglik.BelgeSayisi" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

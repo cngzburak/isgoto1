@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <title>Login - ISG </title>
+</head>
+<body class="sidebar-mini skin-blue wysihtml5-supported">
+    <div class="wrapper">
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="min-height: 916px;">
+            <div id="alert-div">
+                @if (TempData["State"] == "Error")
+                { 
+                <div class="alert alert-danger" role="alert">@TempData["Message"]</div>
+                }
+            </div>
+            <form method="post">
+                @RenderBody()
+            </form>
+        </div>
+    </div>
+    <!-- ./wrapper -->
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script >
+        $(document).ready(function () {
+            setTimeout(myFunction,2000);
+        });
+
+
+        function myFunction() {
+            $("#alert-div").hide();
+        }
+      
+    </script>
+    @RenderSection("scripts", false)
+</body>
+</html>

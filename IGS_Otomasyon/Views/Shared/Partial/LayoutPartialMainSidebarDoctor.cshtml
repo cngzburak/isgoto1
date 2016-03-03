@@ -1,0 +1,139 @@
+﻿ <!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+            <div class="pull-left image">
+                <img src="~/Content/Images/burak.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+                <p>@Session["TamAd"]</p>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+         
+
+            <li>
+                <a href="Anasayfa">
+                    <i class="fa fa-home"   ></i> <span>Anasayfa</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index","Personel",new {area = "YBS"})">
+                    <i class="fa fa-user"></i> <span>Personel Bilgileri</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index","PysicalExamination",new {area = "YBS"})">
+                    <i class="fa fa-user"></i> <span>Muayene Bilgileri</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="#">
+                    <i class="fa fa-building-o"></i> <span>İş Yeri Bilgileri</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="Ajanda">
+                    <i class="fa fa-calendar-o"></i> <span>Ajanda</span> 
+                </a>
+            </li>
+
+
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>Organizasyon Yönetimi</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i>Risk Yönetimi</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Kaza,Afet ve Acil Durum</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> İSG Kurul</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> İş Kazası</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-user-md"></i>
+                    <span>İş Sağlığı Yönetimi</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i>İdari Çalışmalar</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Medikal Çalışmalar</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Meslek Hastalıkları</a></li>
+                    <li><a href="Muayene"><i class="fa fa-circle-o"></i> Muayeneler</a></li>
+                </ul>
+            </li>
+
+       
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-book"></i>
+                    <span>Dökümanlar</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i>Belgeler</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Arşiv</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Hazır Dokumanlar</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa ion-clipboard"></i> <span>Hukuki Boyut</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa fa-files-o"></i> <span>Raporlamalar</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="fa ion-stats-bars"></i> <span>İstatislik</span>
+                </a>
+            </li>
+
+
+
+        
+        </ul>
+
+
+    </section>
+    <!-- /.sidebar -->
+</aside>

@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Iletisim">
+          <Key>
+            <PropertyRef Name="IletisimId" />
+          </Key>
+          <Property Name="IletisimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CepTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="EPosta" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvAdresi" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvAdresiIl" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvAdresiIlce" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="EvPostaKodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAdresi" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAdresiIl" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAdresiIlce" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsFax" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsVergiDairesiNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsPostaKodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakinlikDerecesi" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniAdresi" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniAdresiIl" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniAdresiIlce" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniCepTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniPostaKodu" Type="nvarchar" MaxLength="50" />
+          <Property Name="YakiniEPosta" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Kimlik">
+          <Key>
+            <PropertyRef Name="KimlikId" />
+          </Key>
+          <Property Name="KimlikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimId" Type="int" />
+          <Property Name="TcNo" Type="nvarchar" MaxLength="11" />
+          <Property Name="Seri" Type="nvarchar" MaxLength="50" />
+          <Property Name="No" Type="int" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Soyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cinsiyet" Type="int" Nullable="false" />
+          <Property Name="BabaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="AnaAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DogumYeri" Type="nvarchar" MaxLength="50" />
+          <Property Name="DogumTarihi" Type="datetime" />
+          <Property Name="MedeniHal" Type="int" Nullable="false" />
+          <Property Name="Din" Type="nvarchar" MaxLength="50" />
+          <Property Name="KanGrubu" Type="int" Nullable="false" />
+          <Property Name="MahalleKoy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Il" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ilce" Type="nvarchar" MaxLength="50" />
+          <Property Name="CiltNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="AileSiraNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiraNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="VerildigiYer" Type="nvarchar" MaxLength="50" />
+          <Property Name="VerilisNedeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="KayitNo" Type="int" />
+          <Property Name="VerilisTarihi" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="KullaniciId" />
+          </Key>
+          <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TcNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Isim" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoyIsim" Type="nvarchar" MaxLength="50" />
+          <Property Name="Eposta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+          <Property Name="RolId" Type="int" />
+        </EntityType>
+        <EntityType Name="Muayene">
+          <Key>
+            <PropertyRef Name="MuayeneId" />
+          </Key>
+          <Property Name="MuayeneId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MuayeneTarih" Type="datetime" />
+          <Property Name="Departman" Type="nvarchar" MaxLength="50" />
+          <Property Name="Meslek" Type="int" />
+          <Property Name="MuayeneTur" Type="int" />
+          <Property Name="MuayeneSonuc" Type="int" />
+          <Property Name="Bildirim" Type="int" />
+          <Property Name="Istirahat" Type="bit" />
+          <Property Name="PersonelId" Type="int" />
+          <Property Name="Sevk" Type="bit" />
+          <Property Name="DoktorId" Type="int" />
+        </EntityType>
+        <EntityType Name="Ogrenim">
+          <Key>
+            <PropertyRef Name="OgrenimId" />
+          </Key>
+          <Property Name="OgrenimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimId" Type="int" />
+          <Property Name="VerenKurum" Type="nvarchar" MaxLength="50" />
+          <Property Name="BelgeTuru" Type="nvarchar" MaxLength="50" />
+          <Property Name="BelgeTarihi" Type="datetime" />
+          <Property Name="BelgeSayisi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Gorevi" Type="int" Nullable="false" />
+          <Property Name="CepTel" Type="nvarchar" MaxLength="50" />
+          <Property Name="PersonelNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="Arsivlendi" Type="bit" Nullable="false" />
+          <Property Name="OgrenimId" Type="int" Nullable="false" />
+          <Property Name="IletisimId" Type="int" Nullable="false" />
+          <Property Name="KimlikId" Type="int" Nullable="false" />
+          <Property Name="SabikaId" Type="int" Nullable="false" />
+          <Property Name="SaglikId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RolTipi" Type="int" />
+        </EntityType>
+        <EntityType Name="Sabika">
+          <Key>
+            <PropertyRef Name="SabikaId" />
+          </Key>
+          <Property Name="SabikaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimId" Type="int" />
+          <Property Name="VerenKurum" Type="nvarchar" MaxLength="50" />
+          <Property Name="BelgeTarihi" Type="datetime" />
+          <Property Name="BelgeSayisi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Saglik">
+          <Key>
+            <PropertyRef Name="SaglikId" />
+          </Key>
+          <Property Name="SaglikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResimId" Type="int" />
+          <Property Name="VerenKurum" Type="nvarchar" MaxLength="50" />
+          <Property Name="BelgeTarihi" Type="datetime" />
+          <Property Name="BelgeSayisi" Type="nvarchar" MaxLength="50" />
+          <Property Name="OzurDurumu" Type="nvarchar" MaxLength="50" />
+          <Property Name="YazmanIhtiyaci" Type="bit" />
+          <Property Name="TercumanIhtiyacı" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Kullanici_Rol1">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Iletisim">
+          <End Role="Iletisim" Type="Self.Iletisim" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iletisim">
+              <PropertyRef Name="IletisimId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="IletisimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Kimlik">
+          <End Role="Kimlik" Type="Self.Kimlik" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kimlik">
+              <PropertyRef Name="KimlikId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="KimlikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Ogrenim">
+          <End Role="Ogrenim" Type="Self.Ogrenim" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ogrenim">
+              <PropertyRef Name="OgrenimId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="OgrenimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Sabika">
+          <End Role="Sabika" Type="Self.Sabika" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sabika">
+              <PropertyRef Name="SabikaId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SabikaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Saglik">
+          <End Role="Saglik" Type="Self.Saglik" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Saglik">
+              <PropertyRef Name="SaglikId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SaglikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="Iletisim" EntityType="Self.Iletisim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kimlik" EntityType="Self.Kimlik" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muayene" EntityType="Self.Muayene" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ogrenim" EntityType="Self.Ogrenim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sabika" EntityType="Self.Sabika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Saglik" EntityType="Self.Saglik" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Kullanici_Rol1" Association="Self.FK_Kullanici_Rol1">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Personel" Association="Self.FK_Muayene_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Muayene" EntitySet="Muayene" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Iletisim" Association="Self.FK_Personel_Iletisim">
+            <End Role="Iletisim" EntitySet="Iletisim" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Kimlik" Association="Self.FK_Personel_Kimlik">
+            <End Role="Kimlik" EntitySet="Kimlik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Ogrenim" Association="Self.FK_Personel_Ogrenim">
+            <End Role="Ogrenim" EntitySet="Ogrenim" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Sabika" Association="Self.FK_Personel_Sabika">
+            <End Role="Sabika" EntitySet="Sabika" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Saglik" Association="Self.FK_Personel_Saglik">
+            <End Role="Saglik" EntitySet="Saglik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Iletisim">
+          <Key>
+            <PropertyRef Name="IletisimId" />
+          </Key>
+          <Property Name="IletisimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EvPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsVergiDairesiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakinlikDerecesi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniCepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YakiniEPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Iletisim" FromRole="Iletisim" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Kimlik">
+          <Key>
+            <PropertyRef Name="KimlikId" />
+          </Key>
+          <Property Name="KimlikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimId" Type="Int32" />
+          <Property Name="TcNo" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="Seri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="No" Type="Int32" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cinsiyet" Type="Int32" Nullable="false" />
+          <Property Name="BabaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AnaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DogumYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="3" />
+          <Property Name="MedeniHal" Type="Int32" Nullable="false" />
+          <Property Name="Din" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KanGrubu" Type="Int32" Nullable="false" />
+          <Property Name="MahalleKoy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Il" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ilce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CiltNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AileSiraNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiraNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VerildigiYer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VerilisNedeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KayitNo" Type="Int32" />
+          <Property Name="VerilisTarihi" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Kimlik" FromRole="Kimlik" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="KullaniciId" />
+          </Key>
+          <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SoyIsim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RolId" Type="Int32" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Kullanici_Rol1" FromRole="Kullanici" ToRole="Rol" />
+        </EntityType>
+        <EntityType Name="Muayene">
+          <Key>
+            <PropertyRef Name="MuayeneId" />
+          </Key>
+          <Property Name="MuayeneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MuayeneTarih" Type="DateTime" Precision="3" />
+          <Property Name="Departman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Meslek" Type="Int32" />
+          <Property Name="MuayeneTur" Type="Int32" />
+          <Property Name="MuayeneSonuc" Type="Int32" />
+          <Property Name="Bildirim" Type="Int32" />
+          <Property Name="Istirahat" Type="Boolean" />
+          <Property Name="PersonelId" Type="Int32" />
+          <Property Name="Sevk" Type="Boolean" />
+          <Property Name="DoktorId" Type="Int32" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Muayene_Personel" FromRole="Muayene" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Ogrenim">
+          <Key>
+            <PropertyRef Name="OgrenimId" />
+          </Key>
+          <Property Name="OgrenimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimId" Type="Int32" />
+          <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BelgeTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Ogrenim" FromRole="Ogrenim" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Personel">
+          <Key>
+            <PropertyRef Name="PersonelId" />
+          </Key>
+          <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Gorevi" Type="Int32" Nullable="false" />
+          <Property Name="CepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Arsivlendi" Type="Boolean" Nullable="false" />
+          <Property Name="OgrenimId" Type="Int32" Nullable="false" />
+          <Property Name="IletisimId" Type="Int32" Nullable="false" />
+          <Property Name="KimlikId" Type="Int32" Nullable="false" />
+          <Property Name="SabikaId" Type="Int32" Nullable="false" />
+          <Property Name="SaglikId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Iletisim" Relationship="Self.FK_Personel_Iletisim" FromRole="Personel" ToRole="Iletisim" />
+          <NavigationProperty Name="Kimlik" Relationship="Self.FK_Personel_Kimlik" FromRole="Personel" ToRole="Kimlik" />
+          <NavigationProperty Name="Muayene" Relationship="Self.FK_Muayene_Personel" FromRole="Personel" ToRole="Muayene" />
+          <NavigationProperty Name="Ogrenim" Relationship="Self.FK_Personel_Ogrenim" FromRole="Personel" ToRole="Ogrenim" />
+          <NavigationProperty Name="Sabika" Relationship="Self.FK_Personel_Sabika" FromRole="Personel" ToRole="Sabika" />
+          <NavigationProperty Name="Saglik" Relationship="Self.FK_Personel_Saglik" FromRole="Personel" ToRole="Saglik" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RolTipi" Type="Int32" />
+          <NavigationProperty Name="Kullanici" Relationship="Self.FK_Kullanici_Rol1" FromRole="Rol" ToRole="Kullanici" />
+        </EntityType>
+        <EntityType Name="Sabika">
+          <Key>
+            <PropertyRef Name="SabikaId" />
+          </Key>
+          <Property Name="SabikaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimId" Type="Int32" />
+          <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Sabika" FromRole="Sabika" ToRole="Personel" />
+        </EntityType>
+        <EntityType Name="Saglik">
+          <Key>
+            <PropertyRef Name="SaglikId" />
+          </Key>
+          <Property Name="SaglikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResimId" Type="Int32" />
+          <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+          <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OzurDurumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YazmanIhtiyaci" Type="Boolean" />
+          <Property Name="TercumanIhtiyacı" Type="Boolean" />
+          <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Saglik" FromRole="Saglik" ToRole="Personel" />
+        </EntityType>
+        <Association Name="FK_Personel_Iletisim">
+          <End Role="Iletisim" Type="Self.Iletisim" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Iletisim">
+              <PropertyRef Name="IletisimId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="IletisimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Kimlik">
+          <End Role="Kimlik" Type="Self.Kimlik" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kimlik">
+              <PropertyRef Name="KimlikId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="KimlikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kullanici_Rol1">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="0..1" />
+          <End Role="Kullanici" Type="Self.Kullanici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="RolId" />
+            </Principal>
+            <Dependent Role="Kullanici">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Muayene_Personel">
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
+          <End Role="Muayene" Type="Self.Muayene" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel">
+              <PropertyRef Name="PersonelId" />
+            </Principal>
+            <Dependent Role="Muayene">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Ogrenim">
+          <End Role="Ogrenim" Type="Self.Ogrenim" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ogrenim">
+              <PropertyRef Name="OgrenimId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="OgrenimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Sabika">
+          <End Role="Sabika" Type="Self.Sabika" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sabika">
+              <PropertyRef Name="SabikaId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SabikaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Personel_Saglik">
+          <End Role="Saglik" Type="Self.Saglik" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Saglik">
+              <PropertyRef Name="SaglikId" />
+            </Principal>
+            <Dependent Role="Personel">
+              <PropertyRef Name="SaglikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="IsgEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Iletisim" EntityType="Self.Iletisim" />
+          <EntitySet Name="Kimlik" EntityType="Self.Kimlik" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" />
+          <EntitySet Name="Muayene" EntityType="Self.Muayene" />
+          <EntitySet Name="Ogrenim" EntityType="Self.Ogrenim" />
+          <EntitySet Name="Personel" EntityType="Self.Personel" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" />
+          <EntitySet Name="Sabika" EntityType="Self.Sabika" />
+          <EntitySet Name="Saglik" EntityType="Self.Saglik" />
+          <AssociationSet Name="FK_Personel_Iletisim" Association="Self.FK_Personel_Iletisim">
+            <End Role="Iletisim" EntitySet="Iletisim" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Kimlik" Association="Self.FK_Personel_Kimlik">
+            <End Role="Kimlik" EntitySet="Kimlik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kullanici_Rol1" Association="Self.FK_Kullanici_Rol1">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Kullanici" EntitySet="Kullanici" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Muayene_Personel" Association="Self.FK_Muayene_Personel">
+            <End Role="Personel" EntitySet="Personel" />
+            <End Role="Muayene" EntitySet="Muayene" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Ogrenim" Association="Self.FK_Personel_Ogrenim">
+            <End Role="Ogrenim" EntitySet="Ogrenim" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Sabika" Association="Self.FK_Personel_Sabika">
+            <End Role="Sabika" EntitySet="Sabika" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Personel_Saglik" Association="Self.FK_Personel_Saglik">
+            <End Role="Saglik" EntitySet="Saglik" />
+            <End Role="Personel" EntitySet="Personel" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="IsgEntities">
+          <EntitySetMapping Name="Iletisim">
+            <EntityTypeMapping TypeName="Models.Iletisim">
+              <MappingFragment StoreEntitySet="Iletisim">
+                <ScalarProperty Name="IletisimId" ColumnName="IletisimId" />
+                <ScalarProperty Name="CepTel" ColumnName="CepTel" />
+                <ScalarProperty Name="EPosta" ColumnName="EPosta" />
+                <ScalarProperty Name="EvAdresi" ColumnName="EvAdresi" />
+                <ScalarProperty Name="EvAdresiIl" ColumnName="EvAdresiIl" />
+                <ScalarProperty Name="EvAdresiIlce" ColumnName="EvAdresiIlce" />
+                <ScalarProperty Name="EvTel" ColumnName="EvTel" />
+                <ScalarProperty Name="EvPostaKodu" ColumnName="EvPostaKodu" />
+                <ScalarProperty Name="IsAdresi" ColumnName="IsAdresi" />
+                <ScalarProperty Name="IsAdresiIl" ColumnName="IsAdresiIl" />
+                <ScalarProperty Name="IsAdresiIlce" ColumnName="IsAdresiIlce" />
+                <ScalarProperty Name="IsTel" ColumnName="IsTel" />
+                <ScalarProperty Name="IsFax" ColumnName="IsFax" />
+                <ScalarProperty Name="IsVergiDairesiNo" ColumnName="IsVergiDairesiNo" />
+                <ScalarProperty Name="IsPostaKodu" ColumnName="IsPostaKodu" />
+                <ScalarProperty Name="YakiniAd" ColumnName="YakiniAd" />
+                <ScalarProperty Name="YakiniSoyad" ColumnName="YakiniSoyad" />
+                <ScalarProperty Name="YakinlikDerecesi" ColumnName="YakinlikDerecesi" />
+                <ScalarProperty Name="YakiniAdresi" ColumnName="YakiniAdresi" />
+                <ScalarProperty Name="YakiniAdresiIl" ColumnName="YakiniAdresiIl" />
+                <ScalarProperty Name="YakiniAdresiIlce" ColumnName="YakiniAdresiIlce" />
+                <ScalarProperty Name="YakiniCepTel" ColumnName="YakiniCepTel" />
+                <ScalarProperty Name="YakiniPostaKodu" ColumnName="YakiniPostaKodu" />
+                <ScalarProperty Name="YakiniEPosta" ColumnName="YakiniEPosta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kimlik">
+            <EntityTypeMapping TypeName="Models.Kimlik">
+              <MappingFragment StoreEntitySet="Kimlik">
+                <ScalarProperty Name="KimlikId" ColumnName="KimlikId" />
+                <ScalarProperty Name="ResimId" ColumnName="ResimId" />
+                <ScalarProperty Name="TcNo" ColumnName="TcNo" />
+                <ScalarProperty Name="Seri" ColumnName="Seri" />
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Soyad" ColumnName="Soyad" />
+                <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+                <ScalarProperty Name="BabaAdi" ColumnName="BabaAdi" />
+                <ScalarProperty Name="AnaAdi" ColumnName="AnaAdi" />
+                <ScalarProperty Name="DogumYeri" ColumnName="DogumYeri" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="MedeniHal" ColumnName="MedeniHal" />
+                <ScalarProperty Name="Din" ColumnName="Din" />
+                <ScalarProperty Name="KanGrubu" ColumnName="KanGrubu" />
+                <ScalarProperty Name="MahalleKoy" ColumnName="MahalleKoy" />
+                <ScalarProperty Name="Il" ColumnName="Il" />
+                <ScalarProperty Name="Ilce" ColumnName="Ilce" />
+                <ScalarProperty Name="CiltNo" ColumnName="CiltNo" />
+                <ScalarProperty Name="AileSiraNo" ColumnName="AileSiraNo" />
+                <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+                <ScalarProperty Name="VerildigiYer" ColumnName="VerildigiYer" />
+                <ScalarProperty Name="VerilisNedeni" ColumnName="VerilisNedeni" />
+                <ScalarProperty Name="KayitNo" ColumnName="KayitNo" />
+                <ScalarProperty Name="VerilisTarihi" ColumnName="VerilisTarihi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="Models.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+                <ScalarProperty Name="TcNo" ColumnName="TcNo" />
+                <ScalarProperty Name="Isim" ColumnName="Isim" />
+                <ScalarProperty Name="SoyIsim" ColumnName="SoyIsim" />
+                <ScalarProperty Name="Eposta" ColumnName="Eposta" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Muayene">
+            <EntityTypeMapping TypeName="Models.Muayene">
+              <MappingFragment StoreEntitySet="Muayene">
+                <ScalarProperty Name="MuayeneId" ColumnName="MuayeneId" />
+                <ScalarProperty Name="MuayeneTarih" ColumnName="MuayeneTarih" />
+                <ScalarProperty Name="Departman" ColumnName="Departman" />
+                <ScalarProperty Name="Meslek" ColumnName="Meslek" />
+                <ScalarProperty Name="MuayeneTur" ColumnName="MuayeneTur" />
+                <ScalarProperty Name="MuayeneSonuc" ColumnName="MuayeneSonuc" />
+                <ScalarProperty Name="Bildirim" ColumnName="Bildirim" />
+                <ScalarProperty Name="Istirahat" ColumnName="Istirahat" />
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Sevk" ColumnName="Sevk" />
+                <ScalarProperty Name="DoktorId" ColumnName="DoktorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ogrenim">
+            <EntityTypeMapping TypeName="Models.Ogrenim">
+              <MappingFragment StoreEntitySet="Ogrenim">
+                <ScalarProperty Name="OgrenimId" ColumnName="OgrenimId" />
+                <ScalarProperty Name="ResimId" ColumnName="ResimId" />
+                <ScalarProperty Name="VerenKurum" ColumnName="VerenKurum" />
+                <ScalarProperty Name="BelgeTuru" ColumnName="BelgeTuru" />
+                <ScalarProperty Name="BelgeTarihi" ColumnName="BelgeTarihi" />
+                <ScalarProperty Name="BelgeSayisi" ColumnName="BelgeSayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel">
+            <EntityTypeMapping TypeName="Models.Personel">
+              <MappingFragment StoreEntitySet="Personel">
+                <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+                <ScalarProperty Name="Gorevi" ColumnName="Gorevi" />
+                <ScalarProperty Name="CepTel" ColumnName="CepTel" />
+                <ScalarProperty Name="PersonelNo" ColumnName="PersonelNo" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="Arsivlendi" ColumnName="Arsivlendi" />
+                <ScalarProperty Name="OgrenimId" ColumnName="OgrenimId" />
+                <ScalarProperty Name="IletisimId" ColumnName="IletisimId" />
+                <ScalarProperty Name="KimlikId" ColumnName="KimlikId" />
+                <ScalarProperty Name="SabikaId" ColumnName="SabikaId" />
+                <ScalarProperty Name="SaglikId" ColumnName="SaglikId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rol">
+            <EntityTypeMapping TypeName="Models.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="RolId" ColumnName="RolId" />
+                <ScalarProperty Name="RolTipi" ColumnName="RolTipi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sabika">
+            <EntityTypeMapping TypeName="Models.Sabika">
+              <MappingFragment StoreEntitySet="Sabika">
+                <ScalarProperty Name="SabikaId" ColumnName="SabikaId" />
+                <ScalarProperty Name="ResimId" ColumnName="ResimId" />
+                <ScalarProperty Name="VerenKurum" ColumnName="VerenKurum" />
+                <ScalarProperty Name="BelgeTarihi" ColumnName="BelgeTarihi" />
+                <ScalarProperty Name="BelgeSayisi" ColumnName="BelgeSayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saglik">
+            <EntityTypeMapping TypeName="Models.Saglik">
+              <MappingFragment StoreEntitySet="Saglik">
+                <ScalarProperty Name="SaglikId" ColumnName="SaglikId" />
+                <ScalarProperty Name="ResimId" ColumnName="ResimId" />
+                <ScalarProperty Name="VerenKurum" ColumnName="VerenKurum" />
+                <ScalarProperty Name="BelgeTarihi" ColumnName="BelgeTarihi" />
+                <ScalarProperty Name="BelgeSayisi" ColumnName="BelgeSayisi" />
+                <ScalarProperty Name="OzurDurumu" ColumnName="OzurDurumu" />
+                <ScalarProperty Name="YazmanIhtiyaci" ColumnName="YazmanIhtiyaci" />
+                <ScalarProperty Name="TercumanIhtiyacı" ColumnName="TercumanIhtiyacı" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

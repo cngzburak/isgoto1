@@ -1,0 +1,18 @@
+﻿@model IGS_Otomasyon.Models.Muayene
+@{
+    ViewBag.Title = "PysicalExaminationCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("/Areas/YBS/Views/PysicalExamination/Partial/MuayeneCreate.cshtml", Model)
+
+@section scripts{
+    <script type="text/javascript">
+        $("#datepicker").datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            clearBtn: true,
+            language: "tr"
+        });
+    </script>
+}

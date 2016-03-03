@@ -1,0 +1,24 @@
+﻿@model IGS_Otomasyon.Models.Personel
+
+@{
+    ViewBag.Title = "PersonelCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("/Areas/YBS/Views/Personel/Partial/PersonelEkle.cshtml", Model)
+
+@section scripts{
+    <script>
+        $('#myTabs a').click(function(e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+        $(".datepickerItem").datepicker({
+            format: "dd/mm/yyyy",
+            todayBtn: "linked",
+            clearBtn: true,
+            language: "tr"
+        });
+    </script>
+}

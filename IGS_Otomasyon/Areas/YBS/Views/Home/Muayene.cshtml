@@ -1,0 +1,140 @@
+﻿@model IEnumerable<IGS_Otomasyon.Models.Muayene>
+@{
+    ViewBag.Title = "Muayene";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p class="visible-xs">
+    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+</p>
+
+<h1 class="page-header">
+    <a href="#" class="btn btn-info btn-lg" onclick="ModalShow2()">
+        <span class=" glyphicon glyphicon-floppy-saved">
+        </span> Yeni Kayıt
+    </a>
+    <a href="#" class="btn btn-info btn-lg" onclick="ModalShow3()">
+        <span class="glyphicon glyphicon-floppy-open">
+        </span> Düzenle
+    </a>
+    <a href="#" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-trash">
+        </span> Sil
+    </a>
+    <a href="#" class="btn btn-info btn-lg">
+        <span class="fa fa-archive"></span> Arşivle
+    </a>
+    <a href="#" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-file"></span> Rapor
+    </a>
+
+</h1>
+<h2 class="sub-header" style="text-align: center; font-weight: bold; ">Muayene Listesi</h2>
+<table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Muayene Tarihi</th>
+            <th>Personel Adı</th>
+            <th>Departman/Bölüm</th>
+            <th>Mesleği</th>
+            <th>Muayene Türü</th>
+            <th>Muayene Sonuç</th>
+            <th>Bildirim Zorunlu</th>
+            <th>İstirahat Var Mı</th>
+
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Muayene Tarihi</th>
+            <th>Personel Adı</th>
+            <th>Departman/Bölüm</th>
+            <th>Mesleği</th>
+            <th>Muayene Türü</th>
+            <th>Muayene Sonuç</th>
+            <th>Bildirim Zorunlu</th>
+            <th>İstirahat Var Mı</th>
+
+        </tr>
+    </tfoot>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr ondblclick="ClickItem(1)">
+                <td>@Html.DisplayFor(modelItem => item.MuayeneTarih)</td>
+                <td>@Html.DisplayFor(modelItem => item.PersonelAd)</td>
+                <td>@Html.DisplayFor(modelItem => item.Departman)</td>
+                <td>@Html.DisplayFor(modelItem => item.Meslek)</td>
+                <td>@Html.DisplayFor(modelItem => item.MuayeneTür)</td>
+                <td>@Html.DisplayFor(modelItem => item.MuayeneSonuc)</td>
+                <td>@Html.DisplayFor(modelItem => item.Bildirim)</td>
+                <td>@Html.DisplayFor(modelItem => item.Istirahat)</td>
+
+
+
+            </tr>
+
+
+
+        }
+
+       
+
+
+    </tbody>
+</table>
+
+@Html.Partial("/Areas/YBS/Views/Home/Partial/MuayeneEkle.cshtml")
+@Html.Partial("/Areas/YBS/Views/Home/Partial/MuayeneDuzenle.cshtml")
+
+@section scripts{
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example1').DataTable();
+        });
+
+        function ModalShow2() {
+            $('#modal3').modal('show')
+
+        }
+        function ModalShow3() {
+            $('#modal4').modal('show')
+
+        }
+        function ClickItem() {
+            $('#modal4').modal('show')
+
+        }
+
+
+        $(document).ready(function () {
+            // Setup - add a text input to each footer cell
+            $('#example1 tfoot th').each(function () {
+                var title = $(this).text();
+                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            });
+
+            // DataTable
+            var table = $('#example1').DataTable();
+
+            // Apply the search
+            table.columns().every(function () {
+                var that = this;
+
+                $('input', this.footer()).on('keyup change', function () {
+                    if (that.search() !== this.value) {
+                        that
+                            .search(this.value)
+                            .draw();
+                    }
+                });
+            });
+        });
+
+    </script>
+
+
+
+}

@@ -1,0 +1,131 @@
+﻿@using IGS_Otomasyon.Models
+@model List<IGS_Otomasyon.Models.Personel>
+@{
+    ViewBag.Title = "PersonelBilgi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding: 10px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Kurum Çalışanları
+
+            <a href="@Url.Action("PersonelCreate", "Personel", new {area = "YBS"})" class="btn btn-primary" style="margin-left: 80%;"><i class="glyphicon glyphicon-edit"></i>&nbsp;&nbsp; Yeni Kayıt</a>
+        </div>
+        <div class="panel-body">
+            <div class="col-md-12">
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%;">
+                    <thead>
+                        <tr>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>TcNo</th>
+                            <th>Görevi</th>
+                            <th>PersonelNo</th>
+                            <th>Cinsiyet</th>
+                            <th>CepTel</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Kimlik.Ad</td>
+                                <td>@item.Kimlik.Soyad</td>
+                                <td>@item.Kimlik.TcNo</td>
+                                <td>@(EnumHelper<GorevType>.GetDisplayValue(item.Gorevi))</td>
+                                <td>@item.PersonelNo</td>
+                                <td>@(EnumHelper<CinsiyetType>.GetDisplayValue(item.Kimlik.Cinsiyet))</td>
+                                <td>@item.CepTel</td>
+                                <td>
+                                    <a href="@Url.Action("PersonelCreate", "Personel", new {area = "YBS", id = item.PersonelId})" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i></a>
+                                    <a onclick="DeletePersonel(@(item.PersonelId))" class="btn btn-primary"><i class="glyphicon glyphicon-remove"></i></a>
+                                    <a onclick="ArchievePersonel(@(item.PersonelId))" class="btn btn-primary"><i class="fa fa-archive"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "ordering": false,
+                "language": {
+                    "lengthMenu": "_MENU_ kayıt göster",
+                    "zeroRecords": "Kayıt Yok",
+                    "info": "Gösteriliyor page _PAGE_ of _PAGES_",
+                    "infoEmpty": "Kullanılabilir Kayıt Yok",
+                    "infoFiltered": "(filtered from _MAX_ total records)"
+                }
+            });
+        });
+
+        var deleteId = -1;
+
+        function DeletePersonel(id) {
+            deleteId = id;
+            $('#DeleteModal').modal('show');
+
+        }
+
+        function DeletePersonelStepTwo() {
+            window.location.href = '@Url.Action("DeletePersonel", "Personel", new {area = "YBS"})' + '/' + deleteId;
+        }
+
+        var archieveId = -1;
+
+        function ArchievePersonel(id) {
+            archieveId = id;
+            $('#ArchieveModal').modal('show');
+
+        }
+
+        function ArchievePersonelStepTwo() {
+            window.location.href = '@Url.Action("ArchievePersonel", "Personel", new {area = "YBS"})' + '/' + archieveId;
+        }
+    </script>
+}
+
+<div class="modal fade" tabindex="-1" role="dialog" id="DeleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Personeli Silme</h4>
+            </div>
+            <div class="modal-body">
+                <p>Personeli silmek istediğinize emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="DeletePersonelStepTwo();">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" tabindex="-1" role="dialog" id="ArchieveModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Personeli Arşivleme</h4>
+            </div>
+            <div class="modal-body">
+                <p>Personeli arşivlemek istediğinize emin misiniz?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="ArchievePersonelStepTwo();">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

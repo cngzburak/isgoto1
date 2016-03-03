@@ -1,0 +1,112 @@
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.dll.config
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.pdb
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\Antlr3.Runtime.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\EntityFramework.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\Newtonsoft.Json.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Helpers.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Mvc.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Optimization.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Razor.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Razor.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\WebGrease.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\EntityFramework.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Helpers.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Mvc.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Optimization.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.Razor.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Razor.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\Newtonsoft.Json.xml
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\bin\Antlr3.Runtime.pdb
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.dll
+C:\Users\cagri\Documents\Visual Studio 2013\Projects\proje1\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.pdb
+C:\Users\cagri\documents\visual studio 2013\Projects\proje1\IGS_Otomasyon\obj\Debug\ISG_Otomasyon.csprojResolveAssemblyReference.cache
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.dll.config
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\IGS_Otomasyon.pdb
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\Antlr3.Runtime.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\EntityFramework.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\Microsoft.Web.Infrastructure.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\Newtonsoft.Json.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Helpers.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Mvc.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Optimization.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Razor.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Razor.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\WebGrease.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\EntityFramework.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Helpers.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Mvc.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Optimization.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.Razor.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\System.Web.WebPages.Razor.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\Newtonsoft.Json.xml
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\bin\Antlr3.Runtime.pdb
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\obj\Debug\ISG_Otomasyon.csprojResolveAssemblyReference.cache
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.dll
+D:\Downloads\proje-25 şubat\proje1\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.pdb
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.dll.config
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.pdb
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Antlr3.Runtime.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\EntityFramework.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Newtonsoft.Json.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Helpers.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Mvc.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Optimization.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Razor.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Razor.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\WebGrease.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\EntityFramework.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Helpers.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Mvc.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Optimization.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Razor.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Razor.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Newtonsoft.Json.xml
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Antlr3.Runtime.pdb
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\ISG_Otomasyon.csprojResolveAssemblyReference.cache
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.dll
+C:\Users\BurakCengiz\Desktop\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.pdb
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.dll.config
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\IGS_Otomasyon.pdb
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Antlr3.Runtime.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\EntityFramework.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Newtonsoft.Json.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Helpers.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Mvc.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Optimization.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Razor.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Razor.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\WebGrease.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\EntityFramework.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Helpers.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Mvc.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Optimization.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.Razor.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Deployment.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\System.Web.WebPages.Razor.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Newtonsoft.Json.xml
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\bin\Antlr3.Runtime.pdb
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\ISG_Otomasyon.csprojResolveAssemblyReference.cache
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.dll
+C:\Users\BurakCengiz\Desktop\ISG Proje\IGS_Otomasyon (1)\IGS_Otomasyon\obj\Debug\IGS_Otomasyon.pdb

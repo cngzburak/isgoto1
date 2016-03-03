@@ -1,0 +1,47 @@
+﻿<html>
+<head>
+    @Html.Partial("~/Views/Shared/Partial/LayoutPartialHead.cshtml")
+
+
+</head>
+<body class="sidebar-mini skin-blue wysihtml5-supported">
+    <div class="wrapper">
+        @Html.Partial("~/Views/Shared/Partial/LayoutPartialHeader.cshtml")
+
+        @if ((string)@Session["TcNo"] == "123456789")
+        {
+            @Html.Partial("~/Views/Shared/Partial/LayoutPartialMainSidebar.cshtml")
+        }
+        @if ((string)@Session["TcNo"] == "22222")
+        {
+            @Html.Partial("~/Views/Shared/Partial/LayoutPartialMainSidebarDoctor.cshtml")
+        }
+        @if ((string)@Session["TcNo"] == "33333")
+        {
+            @Html.Partial("~/Views/Shared/Partial/LayoutPartialMainSidebarPersonel.cshtml")
+        }
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="min-height: 916px;">
+            <form method="POST">
+                @RenderBody()
+            </form>
+        </div>
+
+        @Html.Partial("~/Views/Shared/Partial/LayoutPartialFooter.cshtml")
+
+        @Html.Partial("~/Views/Shared/Partial/LayoutPartialControlSidebar.cshtml")
+
+    </div>
+    <!-- ./wrapper -->
+    @Html.Partial("~/Views/Shared/Partial/LayoutPartialScripts.cshtml")
+
+    @Html.Partial("~/Views/Shared/Partial/LayoutPartialSettings.cshtml")
+
+
+    @RenderSection("scripts", false)
+
+
+
+</body>
+</html>

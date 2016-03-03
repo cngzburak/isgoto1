@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="IsgModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="IsgEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(IsgModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(IsgModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Iletisim" EntityType="IsgModel.Iletisim" />
+    <EntitySet Name="Kimlik" EntityType="IsgModel.Kimlik" />
+    <EntitySet Name="Kullanici" EntityType="IsgModel.Kullanici" />
+    <EntitySet Name="Muayene" EntityType="IsgModel.Muayene" />
+    <EntitySet Name="Ogrenim" EntityType="IsgModel.Ogrenim" />
+    <EntitySet Name="Personel" EntityType="IsgModel.Personel" />
+    <EntitySet Name="Rol" EntityType="IsgModel.Rol" />
+    <EntitySet Name="Sabika" EntityType="IsgModel.Sabika" />
+    <EntitySet Name="Saglik" EntityType="IsgModel.Saglik" />
+    <EntitySet Name="sysdiagrams" EntityType="IsgModel.sysdiagrams" />
+    <AssociationSet Name="FK_Personel_Iletisim" Association="IsgModel.FK_Personel_Iletisim">
+      <End Role="Iletisim" EntitySet="Iletisim" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Kimlik" Association="IsgModel.FK_Personel_Kimlik">
+      <End Role="Kimlik" EntitySet="Kimlik" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanici_Rol1" Association="IsgModel.FK_Kullanici_Rol1">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Kullanici" EntitySet="Kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Ogrenim" Association="IsgModel.FK_Personel_Ogrenim">
+      <End Role="Ogrenim" EntitySet="Ogrenim" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Sabika" Association="IsgModel.FK_Personel_Sabika">
+      <End Role="Sabika" EntitySet="Sabika" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Personel_Saglik" Association="IsgModel.FK_Personel_Saglik">
+      <End Role="Saglik" EntitySet="Saglik" />
+      <End Role="Personel" EntitySet="Personel" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Iletisim">
+    <Key>
+      <PropertyRef Name="IletisimId" />
+    </Key>
+    <Property Name="IletisimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EvPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsVergiDairesiNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakinlikDerecesi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniAdresi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniAdresiIl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniAdresiIlce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniCepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniPostaKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YakiniEPosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="IsgModel.FK_Personel_Iletisim" FromRole="Iletisim" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Kimlik">
+    <Key>
+      <PropertyRef Name="KimlikId" />
+    </Key>
+    <Property Name="KimlikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimId" Type="Int32" />
+    <Property Name="TcNo" Type="Int64" />
+    <Property Name="Seri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="No" Type="Int32" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cinsiyet" Type="Int32" Nullable="false" />
+    <Property Name="BabaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AnaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DogumYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="3" />
+    <Property Name="MedeniHal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Din" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KanGrubu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MahalleKoy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Il" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ilce" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CiltNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AileSiraNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiraNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerildigiYer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VerilisNedeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KayitNo" Type="Int32" />
+    <Property Name="VerilisTarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Personel" Relationship="IsgModel.FK_Personel_Kimlik" FromRole="Kimlik" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SoyIsim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Eposta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RolId" Type="Int32" />
+    <NavigationProperty Name="Rol" Relationship="IsgModel.FK_Kullanici_Rol1" FromRole="Kullanici" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="Muayene">
+    <Key>
+      <PropertyRef Name="MuayeneId" />
+    </Key>
+    <Property Name="MuayeneId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MuayeneTarih" Type="DateTime" Precision="3" />
+    <Property Name="PersonelAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Departman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Meslek" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MuayeneTür" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MuayeneSonuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bildirim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Istirahat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Arsivlendi" Type="Boolean" Nullable="false" />
+    <Property Name="PersonelId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ogrenim">
+    <Key>
+      <PropertyRef Name="OgrenimId" />
+    </Key>
+    <Property Name="OgrenimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimId" Type="Int32" />
+    <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BelgeTuru" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="IsgModel.FK_Personel_Ogrenim" FromRole="Ogrenim" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Personel">
+    <Key>
+      <PropertyRef Name="PersonelId" />
+    </Key>
+    <Property Name="PersonelId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TcNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gorevi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CepTel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonelNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Arsivlendi" Type="Boolean" Nullable="false" />
+    <Property Name="OgrenimId" Type="Int32" Nullable="false" />
+    <Property Name="IletisimId" Type="Int32" Nullable="false" />
+    <Property Name="KimlikId" Type="Int32" Nullable="false" />
+    <Property Name="SabikaId" Type="Int32" Nullable="false" />
+    <Property Name="SaglikId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Iletisim" Relationship="IsgModel.FK_Personel_Iletisim" FromRole="Personel" ToRole="Iletisim" />
+    <NavigationProperty Name="Kimlik" Relationship="IsgModel.FK_Personel_Kimlik" FromRole="Personel" ToRole="Kimlik" />
+    <NavigationProperty Name="Ogrenim" Relationship="IsgModel.FK_Personel_Ogrenim" FromRole="Personel" ToRole="Ogrenim" />
+    <NavigationProperty Name="Sabika" Relationship="IsgModel.FK_Personel_Sabika" FromRole="Personel" ToRole="Sabika" />
+    <NavigationProperty Name="Saglik" Relationship="IsgModel.FK_Personel_Saglik" FromRole="Personel" ToRole="Saglik" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="RolId" />
+    </Key>
+    <Property Name="RolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolTipi" Type="Int32" />
+    <NavigationProperty Name="Kullanici" Relationship="IsgModel.FK_Kullanici_Rol1" FromRole="Rol" ToRole="Kullanici" />
+  </EntityType>
+  <EntityType Name="Sabika">
+    <Key>
+      <PropertyRef Name="SabikaId" />
+    </Key>
+    <Property Name="SabikaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimId" Type="Int32" />
+    <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personel" Relationship="IsgModel.FK_Personel_Sabika" FromRole="Sabika" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="Saglik">
+    <Key>
+      <PropertyRef Name="SaglikId" />
+    </Key>
+    <Property Name="SaglikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResimId" Type="Int32" />
+    <Property Name="VerenKurum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BelgeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="BelgeSayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OzurDurumu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YazmanIhtiyaci" Type="Boolean" />
+    <Property Name="TercumanIhtiyacı" Type="Boolean" />
+    <NavigationProperty Name="Personel" Relationship="IsgModel.FK_Personel_Saglik" FromRole="Saglik" ToRole="Personel" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Personel_Iletisim">
+    <End Type="IsgModel.Iletisim" Role="Iletisim" Multiplicity="1" />
+    <End Type="IsgModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Iletisim">
+        <PropertyRef Name="IletisimId" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="IletisimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Kimlik">
+    <End Type="IsgModel.Kimlik" Role="Kimlik" Multiplicity="1" />
+    <End Type="IsgModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kimlik">
+        <PropertyRef Name="KimlikId" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="KimlikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanici_Rol1">
+    <End Type="IsgModel.Rol" Role="Rol" Multiplicity="0..1" />
+    <End Type="IsgModel.Kullanici" Role="Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="RolId" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Ogrenim">
+    <End Type="IsgModel.Ogrenim" Role="Ogrenim" Multiplicity="1" />
+    <End Type="IsgModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ogrenim">
+        <PropertyRef Name="OgrenimId" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="OgrenimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Sabika">
+    <End Type="IsgModel.Sabika" Role="Sabika" Multiplicity="1" />
+    <End Type="IsgModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sabika">
+        <PropertyRef Name="SabikaId" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="SabikaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Personel_Saglik">
+    <End Type="IsgModel.Saglik" Role="Saglik" Multiplicity="1" />
+    <End Type="IsgModel.Personel" Role="Personel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Saglik">
+        <PropertyRef Name="SaglikId" />
+      </Principal>
+      <Dependent Role="Personel">
+        <PropertyRef Name="SaglikId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
